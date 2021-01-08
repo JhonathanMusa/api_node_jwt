@@ -1,0 +1,22 @@
+#clockContainer {
+  background: #000;
+  color: rgb(238, 231, 136);
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 200px;
+  border: 1px solid #000;
+  border-radius: 50%;
+}
+
+.morning {
+  color: rgb(241, 146, 36);
+  font-weight: bold;
+}
+
+.afternon {
+  color: rgb(163, 239, 245);
+  font-weight: bold;
+}
