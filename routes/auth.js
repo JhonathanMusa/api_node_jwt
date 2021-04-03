@@ -2,6 +2,7 @@ const router = require("express").Router();
 const User = require("../models/User");
 const Joi = require("@hapi/joi");
 const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
 
 const schemaRegister = Joi.object({
   name: Joi.string().min(6).max(255).required(),
@@ -31,6 +32,20 @@ router.post("/login", async (req, res) => {
   const validPassword = await bcrypt.compare(req.body.password, user.password);
   if (!validPassword)
     return res.status(400).json({ error: "contraseña no valida" });
+
+  // create token
+  const token = jwt.sign(
+    {
+      name: user.name,
+      id: user._id,
+    },
+    process.env.TOKEN_SECRET
+  );
+
+  res.header("auth-token", token).json({
+    error: null,
+    data: { token },
+  });
 
   res.json({
     error: null,

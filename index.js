@@ -3,6 +3,8 @@ const mongoose = require("mongoose");
 const app = express();
 const authRoutes = require("./routes/auth");
 require("dotenv").config();
+const dashboardRoutes = require("./routes/dashboard");
+const verifyToken = require("./routes/validate-token");
 
 // Capture Body
 app.use(express.json());
@@ -20,10 +22,10 @@ mongoose
   .then(() => console.log("Base de datos conectada"))
   .catch((e) => console.log("error db: ", e));
 
-  
 // import routes
 app.use("/api/user", authRoutes);
 // route middleware
+app.use("/api/dashboard", verifyToken, dashboardRoutes);
 app.get("/", (req, res) => {
   res.json({
     estado: true,
