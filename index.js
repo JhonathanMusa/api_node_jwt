@@ -5,8 +5,10 @@ const authRoutes = require("./routes/auth");
 require("dotenv").config();
 const dashboardRoutes = require("./routes/dashboard");
 const verifyToken = require("./routes/validate-token");
+const cors = require("cors");
 
 // Capture Body
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
