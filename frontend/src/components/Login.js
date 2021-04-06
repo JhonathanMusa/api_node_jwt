@@ -57,6 +57,7 @@ export default function Login() {
         <div>
           <button className="form-login__button">Log-in</button>
         </div>
+        <div>Already has an account?</div>
       </form>
     </div>
   );

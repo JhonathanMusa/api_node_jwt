@@ -12,7 +12,8 @@
   padding-top: 50px;
 }
 
-.form-login {
+.form-login,
+.form-register {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -20,7 +21,8 @@
   padding-top: 30px;
 }
 
-.form-login__input {
+.form-login__input,
+.form-register__input {
   width: 200px;
   height: 30px;
   border: none;
@@ -29,7 +31,7 @@
   margin-bottom: 10px;
 }
 
-.form-login__button {
+.form-login__button, .form-register__button {
   width: 200px;
   height: 30px;
   border: none;
