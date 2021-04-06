@@ -30,25 +30,33 @@ export default function Login() {
   };
 
   return (
-    <div>
-      <form onSubmit={submitHandle}>
-        <p>
+    <div className="container">
+      <div className="title-login">
+        <p>Login</p>
+      </div>
+      <form className="form-login" onSubmit={submitHandle}>
+        <div>
           <input
-            type="email"
-            placeholder="Email"
-            onChange={inputHandler}
+            className="form-login__input"
             name="email"
-          />
-        </p>
-        <p>
-          <input
-            type="password"
-            placeholder="Pass"
             onChange={inputHandler}
-            name="password"
+            placeholder="Email"
+            type="email"
           />
-        </p>
-        <button>Log-in</button>
+        </div>
+
+        <div>
+          <input
+            className="form-login__input"
+            name="password"
+            onChange={inputHandler}
+            placeholder="Pass"
+            type="password"
+          />
+        </div>
+        <div>
+          <button className="form-login__button">Log-in</button>
+        </div>
       </form>
     </div>
   );
