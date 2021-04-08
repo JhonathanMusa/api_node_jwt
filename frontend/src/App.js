@@ -6,8 +6,12 @@ function App() {
   return (
     <div className="App">
       <div className="nav">
-        <a>Home</a>
-        <a className="login">Login</a>
+        <div>
+          <a>Home</a>
+        </div>
+        <div>
+          <a className="login">Login</a>
+        </div>
       </div>
       <Login />
       <AddUsers />

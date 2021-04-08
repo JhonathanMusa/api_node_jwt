@@ -39,6 +39,7 @@ export default function AddUsers() {
             className="form-register__input"
             name="name"
             onChange={inputHandler}
+            placeholder="Name"
             type="text"
           />
         </div>
@@ -47,6 +48,7 @@ export default function AddUsers() {
             className="form-register__input"
             name="email"
             onChange={inputHandler}
+            placeholder="Email"
             type="email"
           />
         </div>
@@ -55,6 +57,7 @@ export default function AddUsers() {
             className="form-register__input"
             name="password"
             onChange={inputHandler}
+            placeholder="Password"
             type="password"
           />
         </div>
