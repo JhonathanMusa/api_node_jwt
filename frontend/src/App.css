@@ -12,6 +12,11 @@ body {
   margin: auto;
 }
 
+h1{
+  color: #f2f2f2;
+  text-align: center;
+}
+
 .nav {
   background: rgba(255, 255, 255, 0.05);
   height: 70px;
@@ -22,7 +27,19 @@ body {
 a {
   color: #f2f2f2;
   cursor: pointer;
+  text-decoration: none;
 }
+
+a:hover{
+  color: rgb(240, 147, 60);
+}
+
+.nav-log{
+  margin-left: auto;
+  margin-right: 10px;
+
+}
+
 
 .title-login {
   text-align: center;
@@ -63,4 +80,13 @@ a {
 .form-login__button:hover,
 .form-register__button:hover {
   background-color: #baa;
+}
+
+.account-info{
+  color: #f2f2f2;
+  margin-top: 20px;
+}
+
+.redirect{
+  color: rgb(240, 147, 60);
 }

@@ -1,7 +1,8 @@
 import Axios from "axios";
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
-export default function AddUsers() {
+export default function Register() {
   const [dataUser, setDataUser] = useState([]);
 
   const inputHandler = (e) => {
@@ -33,6 +34,9 @@ export default function AddUsers() {
 
   return (
     <div className="container">
+      <div className="title-login">
+        <p>Register</p>
+      </div>
       <form className="form-register" onSubmit={submitHandle}>
         <div>
           <input
@@ -63,6 +67,9 @@ export default function AddUsers() {
         </div>
         <div>
           <button className="form-register__button">Register</button>
+        </div>
+        <div className="account-info">
+          Already has an account? <Link to="/login" className="redirect">Sign In</Link>
         </div>
       </form>
     </div>
