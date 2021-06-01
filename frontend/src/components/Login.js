@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import Axios from "axios";
 import { Link } from "react-router-dom";
 
-export default function Login(props) {
+const urlLogin = "http://localhost:5000/api/user/login";
+
+export const Login = (props) => {
   const [userData, setUserData] = useState([]);
 
   const inputHandler = (e) => {
@@ -18,18 +20,13 @@ export default function Login(props) {
 
     const loginUser = async () => {
       try {
-        const { data } = await Axios.post(
-          "http://localhost:5000/api/user/login",
-          userData
-        );
+        const { data } = await Axios.post(urlLogin, userData);
         console.log(data);
       } catch (error) {
         console.log(error);
       }
     };
     loginUser();
-
-
   };
 
   return (
@@ -61,9 +58,12 @@ export default function Login(props) {
           <button className="form-login__button">Log-in</button>
         </div>
         <div className="account-info">
-          New Costumer? <Link to="/register" className="redirect">Create New Account</Link>
+          New Costumer?{" "}
+          <Link to="/register" className="redirect">
+            Create New Account
+          </Link>
         </div>
       </form>
     </div>
   );
-}
+};

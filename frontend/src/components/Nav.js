@@ -1,10 +1,10 @@
 import React from "react";
 import { BrowserRouter as Router, Link, Route } from "react-router-dom";
-import Home from "./Home";
-import Login from "./Login";
-import Register from "./Register";
+import { Home } from "./Home";
+import { Login } from "./Login";
+import { Register } from "./Register";
 
-export default function Nav() {
+export const Nav = () => {
   return (
     <Router>
       <div className="container">
@@ -25,4 +25,4 @@ export default function Nav() {
       </div>
     </Router>
   );
-}
+};

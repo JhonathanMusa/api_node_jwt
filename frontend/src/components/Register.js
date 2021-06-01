@@ -2,7 +2,9 @@ import Axios from "axios";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-export default function Register() {
+const urlRegister = "http://localhost:5000/api/user/register";
+
+export const Register = () => {
   const [dataUser, setDataUser] = useState([]);
 
   const inputHandler = (e) => {
@@ -17,10 +19,7 @@ export default function Register() {
 
     const addData = async () => {
       try {
-        const { data } = await Axios.post(
-          "http://localhost:5000/api/user/register",
-          dataUser
-        );
+        const { data } = await Axios.post(urlRegister, dataUser);
         console.log(data);
       } catch (error) {
         console.log(error);
@@ -69,9 +68,12 @@ export default function Register() {
           <button className="form-register__button">Register</button>
         </div>
         <div className="account-info">
-          Already has an account? <Link to="/login" className="redirect">Sign In</Link>
+          Already has an account?{" "}
+          <Link to="/login" className="redirect">
+            Sign In
+          </Link>
         </div>
       </form>
     </div>
   );
-}
+};
