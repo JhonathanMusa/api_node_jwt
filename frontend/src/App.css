@@ -12,7 +12,7 @@ body {
   margin: auto;
 }
 
-h1{
+h1 {
   color: #f2f2f2;
   text-align: center;
 }
@@ -30,16 +30,14 @@ a {
   text-decoration: none;
 }
 
-a:hover{
+a:hover {
   color: rgb(240, 147, 60);
 }
 
-.nav-log{
+.nav-log {
   margin-left: auto;
   margin-right: 10px;
-
 }
-
 
 .title-login {
   text-align: center;
@@ -58,17 +56,23 @@ a:hover{
 
 .form-login__input,
 .form-register__input {
-  width: 200px;
+  width: 180px;
   height: 30px;
   border: none;
   border: 1px solid #aaa;
   border-radius: 5px;
   margin-bottom: 10px;
+  -webkit-transition: width 0.30s ease-in-out;
+  transition: width 0.30s ease-in-out;
+}
+
+.form-login__input:focus {
+  width: 250px;
 }
 
 .form-login__button,
 .form-register__button {
-  width: 200px;
+  width: 180px;
   height: 30px;
   border: none;
   border: 1px solid #baa;
@@ -82,11 +86,15 @@ a:hover{
   background-color: #baa;
 }
 
-.account-info{
+.account-info {
   color: #f2f2f2;
   margin-top: 20px;
 }
 
-.redirect{
-  color: rgb(240, 147, 60);
+.redirect {
+  color: rgb(241, 160, 83);
+}
+
+.redirect:hover {
+  color: rgb(241, 131, 28);
 }
