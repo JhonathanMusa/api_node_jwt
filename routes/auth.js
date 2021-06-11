@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const User = require("../models/User");
-const Joi = require("@hapi/joi");
+const Joi = require("joi");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 
@@ -26,12 +26,12 @@ router.post("/login", async (req, res) => {
   const user = await User.findOne({ email: req.body.email });
   if (!user)
     return res.status(400).json({
-      error: "Usuario no encontrado",
+      error: "User not found",
     });
 
   const validPassword = await bcrypt.compare(req.body.password, user.password);
   if (!validPassword)
-    return res.status(400).json({ error: "contraseña no valida" });
+    return res.status(400).json({ error: "Invalid Password" });
 
   // create token
   const token = jwt.sign(
@@ -49,7 +49,7 @@ router.post("/login", async (req, res) => {
 
   res.json({
     error: null,
-    data: "exito, Bienvenido",
+    data: "Great, Welcome",
   });
 });
 
@@ -64,7 +64,7 @@ router.post("/register", async (req, res) => {
   const isEmailExist = await User.findOne({ email: req.body.email });
   if (isEmailExist) {
     return res.status(400).json({
-      error: "Email ya registrado",
+      error: "Email already exist",
     });
   }
 

@@ -5,15 +5,17 @@
 }
 
 body {
-  background: linear-gradient(#273940, #5a6c73) no-repeat;
+  background: #252222;
   height: 100vh;
 }
 .container {
-  margin: auto;
+  display: flex;
+  flex-direction: column;
+  padding: 200px 0;
 }
 
 h1 {
-  color: #f2f2f2;
+  color: #e1e1e1;
   text-align: center;
 }
 
@@ -25,24 +27,33 @@ h1 {
 }
 
 a {
-  color: #f2f2f2;
+  color: #e1e1e1;
   cursor: pointer;
   text-decoration: none;
 }
 
 a:hover {
-  color: rgb(240, 147, 60);
+  color: #8574ed;
 }
 
 .nav-log {
   margin-left: auto;
   margin-right: 10px;
+  font-weight: bold;
+}
+
+.nav-reg {
+  font-weight: bold;
+}
+
+.home-element {
+  font-weight: bold;
 }
 
 .title-login {
   text-align: center;
   padding-top: 50px;
-  color: #f2f2f2;
+  color: #e1e1e1;
 }
 
 .form-login,
@@ -56,45 +67,50 @@ a:hover {
 
 .form-login__input,
 .form-register__input {
-  width: 180px;
+  width: 150px;
   height: 30px;
   border: none;
-  border: 1px solid #aaa;
-  border-radius: 5px;
+  outline: none;
+  background: none;
+  color: #e1e1e1;
+  border-bottom: 0.5px solid #fff;
   margin-bottom: 10px;
-  -webkit-transition: width 0.30s ease-in-out;
-  transition: width 0.30s ease-in-out;
+  -webkit-transition: width 0.3s ease-in-out;
+  transition: width 0.3s ease-in-out;
 }
 
-.form-login__input:focus {
+.form-login__input:focus,
+.form-register__input:focus {
   width: 250px;
 }
 
 .form-login__button,
 .form-register__button {
-  width: 180px;
+  width: 100px;
   height: 30px;
   border: none;
-  border: 1px solid #baa;
+  border: 1px solid #8574ed;
   border-radius: 5px;
-  background: #bba;
+  background: #8574ed;
   cursor: pointer;
+  color: #e1e1e1;
+  font-weight: bold;
 }
 
 .form-login__button:hover,
 .form-register__button:hover {
-  background-color: #baa;
+  background-color: #7764f5;
 }
 
 .account-info {
-  color: #f2f2f2;
+  color: #e1e1e1;
   margin-top: 20px;
 }
 
 .redirect {
-  color: rgb(241, 160, 83);
+  color: #8574ed;
 }
 
 .redirect:hover {
-  color: rgb(241, 131, 28);
+  color: #7764f5;
 }

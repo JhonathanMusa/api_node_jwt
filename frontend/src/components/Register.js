@@ -17,7 +17,7 @@ export const Register = () => {
   const submitHandle = (e) => {
     e.preventDefault();
 
-    const addData = async () => {
+    const registerUser = async () => {
       try {
         const { data } = await Axios.post(urlRegister, dataUser);
         console.log(data);
@@ -26,7 +26,8 @@ export const Register = () => {
       }
     };
 
-    addData();
+    registerUser();
+    setDataUser([]);
 
     console.log(dataUser);
   };

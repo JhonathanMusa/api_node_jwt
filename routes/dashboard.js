@@ -4,7 +4,7 @@ router.get("/", (req, res) => {
   res.json({
     error: null,
     data: {
-      title: "Ruta Protegida",
+      title: "Protected Route",
       user: req.user,
     },
   });

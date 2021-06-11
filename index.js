@@ -1,9 +1,9 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
+require("dotenv").config();
 
 const authRoutes = require("./routes/auth");
-require("dotenv").config();
 const dashboardRoutes = require("./routes/dashboard");
 const verifyToken = require("./routes/validate-token");
 
@@ -24,8 +24,8 @@ const option = {
 
 mongoose
   .connect(uri, option)
-  .then(() => console.log("Base de datos conectada"))
-  .catch((e) => console.log("error db: ", e));
+  .then(() => console.log("Conected Database"))
+  .catch((err) => console.log("error db: ", err));
 
 // import routes
 app.use("/api/user", authRoutes);
@@ -36,11 +36,11 @@ app.use("/api/dashboard", verifyToken, dashboardRoutes);
 app.get("/", (req, res) => {
   res.json({
     estado: true,
-    mensaje: "funciona!",
+    mensaje: "It's Work!",
   });
 });
 
-// Iniciar server
+// Iniciar server 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
