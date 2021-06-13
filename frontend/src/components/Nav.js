@@ -7,7 +7,7 @@ import { Register } from "./Register";
 export const Nav = () => {
   return (
     <Router>
-      <Route path="/" exact component={Home} />
+      <Route path="/"   component={Home} />
       <Route path="/login" component={Login} />
       <Route path="/register" component={Register} />
     </Router>
