@@ -16,7 +16,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // conexion a base de datos
-const uri = process.env.MONGOOSE_URI + process.env.DBNAME;
+const uri = process.env.MONGOURI + process.env.DBNAME;
 const option = {
   useNewUrlParser: true,
   useUnifiedTopology: true,

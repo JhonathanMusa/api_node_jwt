@@ -1,11 +1,14 @@
 import React, { useState } from "react";
 import Axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
+import { FormInput } from "../components/FormInput";
 
 const urlLogin = "http://localhost:5000/api/user/login";
 
-export const Login = (props) => {
+export const Login = () => {
   const [userData, setUserData] = useState([]);
+
+  let history = useHistory()
 
   const inputHandler = (e) => {
     setUserData({
@@ -27,7 +30,8 @@ export const Login = (props) => {
       }
     };
     loginUser();
-    
+    history.push("/")
+
   };
 
   return (
@@ -37,22 +41,21 @@ export const Login = (props) => {
       </div>
       <form className="form-login" onSubmit={submitHandle}>
         <div>
-          <input
-            className="form-login__input"
-            name="email"
-            onChange={inputHandler}
-            placeholder="Email"
-            type="email"
+          <FormInput
+            handleChange={inputHandler}
+            name={"email"}
+            placeholder={"Email"}
+            type={"text"}
           />
+
         </div>
 
         <div>
-          <input
-            className="form-login__input"
-            name="password"
-            onChange={inputHandler}
-            placeholder="Pass"
-            type="password"
+          <FormInput
+            handleChange={inputHandler}
+            name={"password"}
+            placeholder={"Pass"}
+            type={"password"}
           />
         </div>
         <div>

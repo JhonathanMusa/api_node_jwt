@@ -1,11 +1,13 @@
 import Axios from "axios";
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 const urlRegister = "http://localhost:5000/api/user/register";
 
 export const Register = () => {
   const [dataUser, setDataUser] = useState([]);
+
+  let history = useHistory()
 
   const inputHandler = (e) => {
     setDataUser({
@@ -28,6 +30,7 @@ export const Register = () => {
 
     registerUser();
     setDataUser([]);
+    history.push("/")
 
     console.log(dataUser);
   };
