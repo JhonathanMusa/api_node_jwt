@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const FormInput = (props) => {
+export const LoginInput = (props) => {
     let classProp = "form-login__input"
     return (
         <form>

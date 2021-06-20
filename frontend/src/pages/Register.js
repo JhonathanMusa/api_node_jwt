@@ -1,13 +1,14 @@
 import Axios from "axios";
 import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
+import { LoginInput } from "../components/LoginInput";
 
 const urlRegister = "http://localhost:5000/api/user/register";
 
 export const Register = () => {
   const [dataUser, setDataUser] = useState([]);
 
-  let history = useHistory()
+  let history = useHistory();
 
   const inputHandler = (e) => {
     setDataUser({
@@ -30,7 +31,7 @@ export const Register = () => {
 
     registerUser();
     setDataUser([]);
-    history.push("/")
+    history.push("/");
 
     console.log(dataUser);
   };
@@ -42,30 +43,27 @@ export const Register = () => {
       </div>
       <form className="form-register" onSubmit={submitHandle}>
         <div>
-          <input
-            className="form-register__input"
-            name="name"
-            onChange={inputHandler}
-            placeholder="Name"
-            type="text"
+          <LoginInput
+            name={"name"}
+            handleChange={inputHandler}
+            placeholder={"Name"}
+            type={"text"}
           />
         </div>
         <div>
-          <input
-            className="form-register__input"
-            name="email"
-            onChange={inputHandler}
-            placeholder="Email"
-            type="email"
+          <LoginInput
+            name={"email"}
+            handleChange={inputHandler}
+            placeholder={"Email"}
+            type={"email"}
           />
         </div>
         <div>
-          <input
-            className="form-register__input"
-            name="password"
-            onChange={inputHandler}
-            placeholder="Password"
-            type="password"
+          <LoginInput
+            name={"password"}
+            handleChange={inputHandler}
+            placeholder={"Password"}
+            type={"password"}
           />
         </div>
         <div>
